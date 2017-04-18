@@ -1,4 +1,4 @@
-##Spotify  Local Api Server
+## Spotify Local Api Server
 
 
 This server gives the possibility to control the local spotify client via REST calls. Great when you can't control the device with spotify connect, as when using a script.
@@ -7,7 +7,7 @@ Using Flask you run a local server which listens for commands and then controls 
 
 The extra flask server is necessary as the spotify server can only be accessed from the devic that is running the client.
 
-###Installation:
+### Installation:
 1)Download the master branch, install [flask](http://flask.pocoo.org/docs/0.12/installation/)
 
 2)
@@ -29,8 +29,9 @@ Or read [this](http://flask.pocoo.org/docs/0.12/deploying/#deployment) for deplo
 
 
 
-###Usage
-	http://localhost:PORT/COMMAND
+### Usage
+
+http://localhost:PORT/COMMAND
 	
 **PORT:** You can set it when running the server in which you use flask,
 please read [here](http://flask.pocoo.org/docs/0.12/deploying/) for deployment options:
