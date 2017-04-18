@@ -18,11 +18,11 @@ The extra flask server is necessary as the spotify server can only be accessed f
 3) Deploy the flask server:
 
  Either using the built-in server (serves 1 request per time) as in [here](http://flask.pocoo.org/docs/0.12/patterns/packages/) .
-Basically just cd in the directory of setup.py, run the setup and afterwards run:
+Basically just cd in the directory of setup.py and run:
 	
 	export FLASK_APP=spot_server
 	python2 -m flask run --host=0.0.0.0 
-	#make sure python2 is used
+#make sure python2 is used
 	
 
 Or read [this](http://flask.pocoo.org/docs/0.12/deploying/#deployment) for deployment options with a proper server.
