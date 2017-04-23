@@ -1,6 +1,6 @@
 import spot_server.spotify
 from flask import Flask,jsonify
-app = Flask('sport_server')
+app = Flask('spot_server')
 import time 
 
 client = spot_server.spotify.ApiClient()
