@@ -13,7 +13,6 @@ Usable only with python2 for the moment!
 1)Download the master branch, install [flask](http://flask.pocoo.org/docs/0.12/installation/)
 
 2)
-
 	cd path/to/spotify-local-http-api-master
 <<<<<<< HEAD
 	sudo pip2 install .  #make sure that you are installing and using the script with python2
