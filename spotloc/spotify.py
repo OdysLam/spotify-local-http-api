@@ -1,4 +1,3 @@
-
 from string import ascii_lowercase
 from random import choice
 import urllib
@@ -19,7 +18,7 @@ class ApiClient():
             self.csrf_token = self.get_csrf_token()
             self.online = True
             return self.online
-        except (KeyError,e):
+        except KeyError,e:
             self.online = False
             return self.online #couldn't get csrf token/ spotify is off
             
