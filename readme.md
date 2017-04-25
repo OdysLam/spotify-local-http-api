@@ -1,4 +1,4 @@
-##Spotify  Local Api Server
+## Spotify Local Api Server
 
 
 This server gives the possibility to control the local spotify client via REST calls. 
@@ -9,23 +9,45 @@ The extra flask server is necessary as the spotify server can only be accessed f
 
 Usable only with python2 for the moment!
 
-###Installation:
+### Installation:
 1)Download the master branch, install [flask](http://flask.pocoo.org/docs/0.12/installation/)
 
 2)
 
 	cd path/to/spotify-local-http-api-master
+<<<<<<< HEAD
 	sudo pip2 install .  #make sure that you are installing and using the script with python2
 	
 3) Run the flask server:
+=======
+	sudo sudo pip2 install -e .
+	
+3) Deploy the flask server:
+
+ Either using the built-in server (serves 1 request per time) as in [here](http://flask.pocoo.org/docs/0.12/patterns/packages/) .
+Basically just cd in the directory of setup.py and run:
+	
+	export FLASK_APP=spot_server
+	python2 -m flask run --host=0.0.0.0 
+#make sure python2 is used
+	
+
+Or read [this](http://flask.pocoo.org/docs/0.12/deploying/#deployment) for deployment options with a proper server.
+>>>>>>> origin/master
 
 	python spotloc
 
 The script uses the flask dev http server. It's not meant for production as it can only serve 1 request/time, but for the needs of our little interface, is more that enough. There is no need to install and  configure extra server and wsgi.
 	
 
+<<<<<<< HEAD
 ###Usage
 	http://ip.of.the.client.machine:PORT/COMMAND
+=======
+### Usage
+
+http://localhost:PORT/COMMAND
+>>>>>>> origin/master
 	
 **PORT:** You can set it in the __main__.py script, defaults to 5000.
 

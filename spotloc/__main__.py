@@ -1,7 +1,20 @@
 import spotloc.spotify
 from flask import Flask,jsonify
+<<<<<<< HEAD:spotloc/__main__.py
 import time
 app = Flask('sport_server')
+=======
+app = Flask('spot_server')
+import time 
+
+client = spot_server.spotify.ApiClient()
+online = client.get_tokens()
+while not online:
+    print("offline")
+    online  = client.get_tokens()
+    time.sleep(1)
+print("online")
+>>>>>>> origin/master:spot_server/__init__.py
 
 @app.route('/')
 def index():
@@ -33,6 +46,7 @@ def status():
         ans['track'] = st['track']['track_resource']['name']
         ans['track_uri'] = st['track']['track_resource']['uri']
     return jsonify(ans)
+<<<<<<< HEAD:spotloc/__main__.py
 @app.errorhandler(404)
 def page404(e):
     return("That command doesn't exist, please read the docs")
@@ -46,3 +60,5 @@ if __name__ == "__main__":
     print("Spotify Server is Online")
     print("Starting Flask Server....")
     app.run(host='0.0.0.0',port=5000)
+=======
+>>>>>>> origin/master:spot_server/__init__.py
