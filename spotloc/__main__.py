@@ -1,7 +1,7 @@
 import spotloc.spotify
 from flask import Flask,jsonify
 import time
-app = Flask('sport_server')
+app = Flask('spotloc')
 
 @app.route('/')
 def index():
