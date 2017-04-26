@@ -9,15 +9,14 @@ The extra flask server is necessary as the spotify server can only be accessed f
 Usable only with python2 for the moment!
 
 ### Installation:
-1)Download the master branch, install [flask](http://flask.pocoo.org/docs/0.12/installation/)
-
-2) Install this library
+1. Download the master branch, install [flask](http://flask.pocoo.org/docs/0.12/installation/)
+2. Install this library
 	
 	cd path/to/spotify-local-http-api-master
 	sudo pip2 install .  
 	#make sure that you are installing for python2
 	
-3) Run the flask server:
+3. Run the flask server:
 	
 	python spotloc
 	
