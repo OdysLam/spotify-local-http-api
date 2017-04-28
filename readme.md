@@ -26,9 +26,9 @@ The script uses the flask dev http server. It's not meant for production as it c
 	
 
 
-###Usage
+### Usage
 	
-http://ip.of.the.client.machine:PORT/COMMAND
+`http://ip.of.the.client.machine:PORT/COMMAND`
 
 **PORT:** You can set it in the __main__.py script, defaults to 5000.
 
