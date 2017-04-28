@@ -14,6 +14,7 @@ Usable only with python2 for the moment!
 2. Install this library
 	
 	`~& cd path/to/spotify-local-http-api-master`
+	
 	`~& sudo pip2 install` 
 	#make sure that you are installing for python2
 	
