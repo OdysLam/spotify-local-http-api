@@ -32,6 +32,8 @@ def status():
     if ans['playing']:
         ans['track'] = st['track']['track_resource']['name']
         ans['track_uri'] = st['track']['track_resource']['uri']
+        ans['artist'] = st['track']['artist_resource']['name']
+        ans['album'] = st['track']['album_resource']['name']
     return jsonify(ans)
 @app.errorhandler(404)
 def page404(e):
