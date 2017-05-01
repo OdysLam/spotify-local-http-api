@@ -6,35 +6,13 @@ Using Flask you run a local server which listens for commands and relays them to
 
 The extra flask server is necessary as the spotify server can only be accessed from the device that is running the client.
 
-Usable only with python2 for the moment!
+Usable only with python 2 for the moment!
 
-### Installation:
+### VERSIONS
 
-1. Download the master branch, install [flask](http://flask.pocoo.org/docs/0.12/installation/)
-2. Install this library
-	
-	`~& cd path/to/spotify-local-http-api-master`
-	
-	`~& sudo pip2 install` 
-	#make sure that you are installing for python2
-	
-3. Run the flask server:
-	
-	`~$ python spotloc`
-	
-The script uses the flask dev http server. It's not meant for production as it can only serve 1 request/time, but for the needs of our little interface, is more that enough. There is no need to install and  configure extra server and wsgi.
-	
+There are currently two versions of the server.
 
+1. **Spotloc:** The server is simply a python library and you can run it by simply typing
+`$python spotloc`. Great for UNIX systems since you can automate it via a simple *cron-job* or by integrating in another python script.
 
-### Usage
-	
-`http://ip.of.the.client.machine:PORT/COMMAND`
-
-**PORT:** You can set it in the __main__.py script, defaults to 5000.
-
-**COMMAND:**
-
-* /play/*spotify uri*  
-*  /pause
-*  /unpause
-*  /status (returns json data(playing:True/False,track-name,track-uri
+2. **Winspotserver** The server is wrapped in a windows service. Once installed, it will run silently at every startup and the server will be always on.
