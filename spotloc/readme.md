@@ -1,11 +1,11 @@
 ### Installation:
 
-1. Download the master branch, install [flask](http://flask.pocoo.org/docs/0.12/installation/)
+1. Download the spotloc master branch, install [flask](http://flask.pocoo.org/docs/0.12/installation/)
 2. Install this library
 	
 	`~& cd path/to/spotify-local-http-api-master`
 	
-	`~& sudo pip2 install` 
+	`~& sudo pip2 install .` 
 	#make sure that you are installing for python2
 	
 3. Run the flask server:

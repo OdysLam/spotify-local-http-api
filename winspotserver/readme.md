@@ -1,6 +1,6 @@
 ## Installation:
 
-Firstly we need to install a couple of libraries.
+The installation is simple enough. We need to install a couple of libraries and then configure the service.
 
 1. Install flask by runnin `pip install flask` #make sure it's pip for python 2
 
