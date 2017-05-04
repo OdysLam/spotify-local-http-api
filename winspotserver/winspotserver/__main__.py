@@ -13,19 +13,19 @@ def index():
 def play_playlist(uri=None):
     if not uri:
         return("<p>Need playlist/song URI string to play.</p><p>format: ip:port/play/uri_link</p>")
-    client.play(uri)
-    return ('play: ' + uri)
+    return jsonify(client.play(uri))
 @app.route('/pause', methods = ['GET'])
 def pause_playlist():
-    client.pause()
-    return ('pause')
+    return jsonify(client.pause())
 @app.route('/unpause', methods = ['GET'])
 def unpause():
-    client.unpause()
-    return ('unpause')
+    return jsonify(client.unpause())
 @app.route('/online',methods = ['GET'])
 def isonline():
-    return client.online
+    return str(client.online)
+@app.route('/tokens',methods = ['GET'])
+def get_tokens():
+    return jsonify(client.get_tokens(raw = True))
 @app.route('/status', methods = ['GET'])
 def status():
     st = client.get_status(return_after=1)
@@ -34,11 +34,12 @@ def status():
     if ans['playing']:
         ans['track'] = st['track']['track_resource']['name']
         ans['track_uri'] = st['track']['track_resource']['uri']
+        ans['artist'] = st['track']['artist_resource']['name']
+        ans['album'] = st['track']['album_resource']['name']
     return jsonify(ans)
 @app.errorhandler(404)
 def page404(e):
     return("That command doesn't exist, please read the docs")
-
 def run_server():
     online = client.get_tokens()
     while not online:

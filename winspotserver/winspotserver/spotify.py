@@ -12,16 +12,17 @@ class ApiClient():
         self.default_return_on = ['login', 'logout', 'play', 'pause', 'error', 'ap']
         self.origin_header = {'Origin': 'https://open.spotify.com'}
         self.online = False
-    def get_tokens(self):
+    def get_tokens(self, raw = False):
         try:
             self.oauth_token = self.get_oauth_token()
             self.csrf_token = self.get_csrf_token()
             self.online = True
-            return self.online
         except:
             self.online = False
-            return self.online #couldn't get csrf token/ spotify is off
-            
+        if raw:
+            return {'oauth':self.oauth_token,'csrf':self.get_csrf_token}
+        return self.online
+        #couldn't get csrf token/ spotify is off           
     def get_json(self,url, params={}, headers={}):
         if params:
             url += "?" + urllib.urlencode(params)
@@ -51,7 +52,7 @@ class ApiClient():
             'csrf': self.csrf_token,
             'pause': 'true' if pause else 'false'
         }
-        self.get_json(self.get_url('/remote/pause.json'), params=params, headers=self.origin_header)
+        return self.get_json(self.get_url('/remote/pause.json'), params=params, headers=self.origin_header)
 
     def unpause(self):
            self.pause(pause=False)
@@ -63,7 +64,7 @@ class ApiClient():
             'uri': spotify_uri,
             'context': spotify_uri,
         }
-        self.get_json(self.get_url('/remote/play.json'), params=params, headers=self.origin_header)
+        return self.get_json(self.get_url('/remote/play.json'), params=params, headers=self.origin_header)
 
     def get_status(self, return_after=59):
         params = {
